@@ -1,0 +1,2 @@
+class ResolvedorIniciais:
+    pass

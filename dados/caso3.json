@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "descricao": "Partícula 'de' omitida e abreviação opcional com ponto (Caso 3 do enunciado)",
+    "registros_originais": [
+      {"id": "746937", "nome": "Luiz de Oliveira de Souza"},
+      {"id": "608296", "nome": "Luiz Oliveira Souza"},
+      {"id": "549242", "nome": "Luiz de O. de Souza"}
+    ],
+    "registros_esperados": [
+      {"id": "746937", "nome": "Luiz de Oliveira de Souza"},
+      {"id": "608296", "nome": "Luiz de Oliveira de Souza"},
+      {"id": "549242", "nome": "Luiz de Oliveira de Souza"}
+    ]
+  },
+  {
+    "descricao": "Variação complementar do mesmo padrão (partícula omitida / abreviação com ponto)",
+    "registros_originais": [
+      {"id": "611001", "nome": "Maria de Souza de Lima"},
+      {"id": "611002", "nome": "Maria Souza Lima"},
+      {"id": "611003", "nome": "Maria de S. de Lima"}
+    ],
+    "registros_esperados": [
+      {"id": "611001", "nome": "Maria de Souza de Lima"},
+      {"id": "611002", "nome": "Maria de Souza de Lima"},
+      {"id": "611003", "nome": "Maria de Souza de Lima"}
+    ]
+  }
+]

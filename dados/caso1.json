@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "descricao": "Apóstrofo/crase divergentes em 'Sant'anna' (Caso 1 do enunciado)",
+    "registros_originais": [
+      {"id": "31299", "nome": "Monica Hirata Sant`anna"},
+      {"id": "433095", "nome": "Mônica Hirata Sant’anna"}
+    ],
+    "registros_esperados": [
+      {"id": "31299", "nome": "Mônica Hirata Sant'anna"},
+      {"id": "433095", "nome": "Mônica Hirata Sant'anna"}
+    ]
+  },
+  {
+    "descricao": "Acentuação ausente/presente em 'Sérgio' (Caso 1 do enunciado)",
+    "registros_originais": [
+      {"id": "554799", "nome": "Sergio Henrique Guaraldi"},
+      {"id": "243350", "nome": "Sérgio Henrique Guaraldi"}
+    ],
+    "registros_esperados": [
+      {"id": "554799", "nome": "Sérgio Henrique Guaraldi"},
+      {"id": "243350", "nome": "Sérgio Henrique Guaraldi"}
+    ]
+  }
+]

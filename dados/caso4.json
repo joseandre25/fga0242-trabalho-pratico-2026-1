@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "descricao": "Iniciais agrupadas do nome e sobrenome intermediário (Caso 4 do enunciado)",
+    "registros_originais": [
+      {"id": "763027", "nome": "Vanilda Cristina Junior"},
+      {"id": "763027", "nome": "VC Junior"}
+    ],
+    "registros_esperados": [
+      {"id": "763027", "nome": "Vanilda Cristina Junior"},
+      {"id": "763027", "nome": "Vanilda Cristina Junior"}
+    ]
+  },
+  {
+    "descricao": "Iniciais agrupadas preferindo a versão por extenso (Caso 4 do enunciado)",
+    "registros_originais": [
+      {"id": "243350", "nome": "Sérgio Henrique Guaraldi"},
+      {"id": "954057", "nome": "SH Guaraldi"}
+    ],
+    "registros_esperados": [
+      {"id": "243350", "nome": "Sérgio Henrique Guaraldi"},
+      {"id": "954057", "nome": "Sérgio Henrique Guaraldi"}
+    ]
+  }
+]

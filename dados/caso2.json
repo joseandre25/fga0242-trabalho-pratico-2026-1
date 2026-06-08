@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "descricao": "Nome completo x sobrenome+iniciais sem pontuação (Caso 2 do enunciado)",
+    "registros_originais": [
+      {"id": "28372", "nome": "Ana de Mattos Seabra"},
+      {"id": "582585", "nome": "Seabra A M"}
+    ],
+    "registros_esperados": [
+      {"id": "28372", "nome": "Ana de Mattos Seabra"},
+      {"id": "582585", "nome": "Ana de Mattos Seabra"}
+    ]
+  },
+  {
+    "descricao": "Nome completo x sobrenome+inicial com ponto (Caso 2 do enunciado)",
+    "registros_originais": [
+      {"id": "28371", "nome": "Cassius de Souza"},
+      {"id": "746936", "nome": "Souza C."}
+    ],
+    "registros_esperados": [
+      {"id": "28371", "nome": "Cassius de Souza"},
+      {"id": "746936", "nome": "Cassius de Souza"}
+    ]
+  }
+]

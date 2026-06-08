@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "descricao": "Cinco registros do mesmo autor mapeados para o menor ID (Caso 5 do enunciado)",
+    "registros_originais": [
+      {"id": "31298", "nome": "Raphael Goncalves Viana"},
+      {"id": "433094", "nome": "Raphael Gonçalves Viana"},
+      {"id": "549243", "nome": "Raphael Gonçalves Viana"},
+      {"id": "608297", "nome": "Raphael Gonçalves Viana"},
+      {"id": "746938", "nome": "Raphael Gonçalves Viana"}
+    ],
+    "registros_esperados": [
+      {"id": "31298", "nome": "Raphael Goncalves Viana"},
+      {"id": "31298", "nome": "Raphael Gonçalves Viana"},
+      {"id": "31298", "nome": "Raphael Gonçalves Viana"},
+      {"id": "31298", "nome": "Raphael Gonçalves Viana"},
+      {"id": "31298", "nome": "Raphael Gonçalves Viana"}
+    ]
+  },
+  {
+    "descricao": "Variação complementar: o menor ID não é o primeiro nem o último da lista de entrada",
+    "registros_originais": [
+      {"id": "713900", "nome": "Yuri Vieira Faria"},
+      {"id": "31300", "nome": "Yuri Vieira Faria"},
+      {"id": "500000", "nome": "Yuri Vieira Faria"}
+    ],
+    "registros_esperados": [
+      {"id": "31300", "nome": "Yuri Vieira Faria"},
+      {"id": "31300", "nome": "Yuri Vieira Faria"},
+      {"id": "31300", "nome": "Yuri Vieira Faria"}
+    ]
+  }
+]

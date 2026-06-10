@@ -4,8 +4,8 @@
 
 - Esther Sena - 210162769
 - José André - 211062016
-- Erick - 211061672
-
+- Erick Santos - 211061672
+- Lucas Ribeiro - 211063185 
 ## Linguagem
 
 Python

@@ -1,0 +1,50 @@
+[
+  {
+    "descricao": "Pipeline completo: grafia, iniciais agrupadas e unificação de IDs",
+    "registros_originais": [
+      {"id": "554799", "nome": "Sergio Henrique Guaraldi"},
+      {"id": "243350", "nome": "Sérgio Henrique Guaraldi"},
+      {"id": "954057", "nome": "SH Guaraldi"}
+    ],
+    "registros_esperados": [
+      {"id": "243350", "nome": "Sérgio Henrique Guaraldi"},
+      {"id": "243350", "nome": "Sérgio Henrique Guaraldi"},
+      {"id": "243350", "nome": "Sérgio Henrique Guaraldi"}
+    ]
+  },
+  {
+    "descricao": "Pipeline completo: variações tipográficas e unificação de IDs",
+    "registros_originais": [
+      {"id": "31298", "nome": "Raphael Goncalves Viana"},
+      {"id": "433094", "nome": "Raphael Gonçalves Viana"},
+      {"id": "549243", "nome": "Raphael Gonçalves Viana"}
+    ],
+    "registros_esperados": [
+      {"id": "31298", "nome": "Raphael Gonçalves Viana"},
+      {"id": "31298", "nome": "Raphael Gonçalves Viana"},
+      {"id": "31298", "nome": "Raphael Gonçalves Viana"}
+    ]
+  },
+  {
+    "descricao": "Pipeline completo: sobrenome com iniciais e unificação de IDs",
+    "registros_originais": [
+      {"id": "28372", "nome": "Ana de Mattos Seabra"},
+      {"id": "582585", "nome": "Seabra A M"}
+    ],
+    "registros_esperados": [
+      {"id": "28372", "nome": "Ana de Mattos Seabra"},
+      {"id": "28372", "nome": "Ana de Mattos Seabra"}
+    ]
+  },
+  {
+    "descricao": "Pipeline completo: iniciais com ponto e IDs distintos",
+    "registros_originais": [
+      {"id": "28371", "nome": "Cassius de Souza"},
+      {"id": "746936", "nome": "Souza C."}
+    ],
+    "registros_esperados": [
+      {"id": "28371", "nome": "Cassius de Souza"},
+      {"id": "28371", "nome": "Cassius de Souza"}
+    ]
+  }
+]

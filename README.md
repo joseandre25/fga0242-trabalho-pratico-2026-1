@@ -4,7 +4,7 @@
 
 - Esther Sena - 210162769
 - José André - 211062016
-- Nome - Matrícula
+- Erick - 211061672
 
 ## Linguagem
 

@@ -102,3 +102,21 @@ class TestResolvedorTipografico:
     def test_resolver_lista_vazia_lanca_excecao(self):
         with pytest.raises(ValueError):
             self.resolvedor.resolver([])
+
+    @pytest.mark.caso1
+    def test_resolver_nao_mistura_autores_distintos(self):
+        registros = [
+            Autor(nome="Monica Hirata Sant`anna", id_autor="31299"),
+            Autor(nome="Mônica Hirata Sant’anna", id_autor="433095"),
+            Autor(nome="Sergio Henrique Guaraldi", id_autor="554799"),
+            Autor(nome="Sérgio Henrique Guaraldi", id_autor="243350"),
+        ]
+
+        resultado = self.resolvedor.resolver(registros)
+
+        assert [a.nome for a in resultado] == [
+            "Mônica Hirata Sant'anna",
+            "Mônica Hirata Sant'anna",
+            "Sérgio Henrique Guaraldi",
+            "Sérgio Henrique Guaraldi",
+        ]

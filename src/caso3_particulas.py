@@ -35,19 +35,39 @@ def _preferir_nome(nomes: list[str]) -> str:
     return max(candidatos, key=lambda n: len(_tokens(n)))
 
 
+class ResolucaoParticulas:
+
+    def __init__(self, registros: list[Autor]) -> None:
+        if not registros:
+            raise ValueError("Lista de registros não pode ser vazia")
+        self._registros = registros
+
+    def executar(self) -> list[Autor]:
+        grupos = self._agrupar_por_assinatura()
+        canonicos = self._resolver_canonicos(grupos)
+        return self._mapear_para_canonicos(canonicos)
+
+    def _agrupar_por_assinatura(self) -> dict[tuple[str, ...], list[str]]:
+        grupos: dict[tuple[str, ...], list[str]] = defaultdict(list)
+        for registro in self._registros:
+            grupos[_assinatura(registro.nome)].append(registro.nome)
+        return grupos
+
+    def _resolver_canonicos(
+        self, grupos: dict[tuple[str, ...], list[str]]
+    ) -> dict[tuple[str, ...], str]:
+        return {sig: _preferir_nome(nomes) for sig, nomes in grupos.items()}
+
+    def _mapear_para_canonicos(
+        self, canonicos: dict[tuple[str, ...], str]
+    ) -> list[Autor]:
+        return [
+            Autor(nome=canonicos[_assinatura(r.nome)], id_autor=r.id_autor)
+            for r in self._registros
+        ]
+
+
 class ResolvedorParticulas:
 
     def resolver(self, registros: list[Autor]) -> list[Autor]:
-        if not registros:
-            raise ValueError("Lista de registros não pode ser vazia")
-
-        grupos: dict[tuple[str, ...], list[str]] = defaultdict(list)
-        for r in registros:
-            grupos[_assinatura(r.nome)].append(r.nome)
-
-        canonicos = {sig: _preferir_nome(nomes) for sig, nomes in grupos.items()}
-
-        return [
-            Autor(nome=canonicos[_assinatura(r.nome)], id_autor=r.id_autor)
-            for r in registros
-        ]
+        return ResolucaoParticulas(registros).executar()

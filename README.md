@@ -116,9 +116,9 @@ as tabelas de antes/depois apresentadas no enunciado para cada caso. Use
 4. Rodar `pytest`.
 5. Abrir Pull Request para revisão.
 
-## Registro da Pessoa 4 - Testes, Integração e Revisão
+## Registro- Testes, Integração e Revisão
 
-A Pessoa 4 atua como responsável por validar a integração do projeto depois das refatorações,
+Eu Esther Sena atuei como responsável por validar a integração do projeto depois das refatorações,
 garantindo que a suíte completa continue passando antes do merge.
 
 - Testes executados: `pytest`

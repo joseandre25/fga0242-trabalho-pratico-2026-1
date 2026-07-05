@@ -97,16 +97,53 @@ Cada arquivo `dados/casoN.json` contém uma lista de cenários no formato:
 as tabelas de antes/depois apresentadas no enunciado para cada caso. Use
 `tests.dados_loader.carregar_casos("casoN.json")` para alimentar `@pytest.mark.parametrize`.
 
-## Divisão Sugerida de Branches
+## Divisão da primeira parte
 
-| Branch | Responsável | Tarefa |
-| --- | --- | --- |
-| `feature/caso1` | Pessoa 1 | Diferenças de grafia |
-| `feature/caso2` | Pessoa 2 | Sobrenome com iniciais |
-| `feature/caso3` | Pessoa 3 | Partículas como `de`, `da`, `do`, `dos` |
-| `feature/caso4` | Pessoa 4 | Iniciais agrupadas |
-| `feature/caso5` | Pessoa 5 | Unificação de IDs |
-| `feature/integracao` | Alguém | Testes de integração |
+| Pessoa | Responsabilidade |
+| --- | --- |
+| Pessoa 1 | Caso 1: diferenças tipográficas, incluindo utilitários de normalização de caracteres e acentuação quando necessário. |
+| Pessoa 2 | Casos 2 e 4: sobrenome com iniciais e iniciais agrupadas, mantendo consistência entre formas abreviadas parecidas. |
+| Pessoa 3 | Caso 3: partículas como `de`, `da`, `do`, `dos` e pontuação opcional. |
+| Pessoa 4 | Caso 5: unificação de IDs, além do `Desduplicador` e dos testes de integração do pipeline completo. |
+
+## Divisão da segunda parte - Refatorações
+
+| Operação | Alvo |
+| --- | --- |
+| **Extrair Método** | `ResolvedorTipográfico::resolver()` |
+| **Substituir Método por Objeto-Método** | `ResolvedorParticulas::resolver()` |
+| **Extrair Classe** | classe relacionada a IDs de resolução |
+
+### Responsabilidades por pessoa nas refatorações
+
+**Pessoa 1 - Extrair Método em `ResolvedorTipográfico::resolver()`**
+
+Analisar o método `resolver()` e identificar trechos coesos que podem virar métodos menores
+com nomes expressivos, como normalizar acentos, tratar apóstrofo e comparar grafias.
+Commit esperado: `[Refact] Extrair Método, ResolvedorTipográfico::resolver()`.
+
+**Pessoa 2 - Substituir Método por Objeto-Método em `ResolvedorParticulas::resolver()`**
+
+Criar uma nova classe cujo construtor recebe os parâmetros do método original, transformando
+os passos do método em métodos dessa classe. Essa é a operação mais delicada e exige atenção
+para não quebrar os testes existentes. Commit esperado:
+`[Refact] Substituir Método por Objeto Método, ResolvedorParticulas::resolver()`.
+
+**Pessoa 3 - Extrair Classe para IDs de resolução**
+
+Identificar responsabilidades sobre resolução de IDs que estejam espalhadas no código e movê-las
+para uma classe dedicada, com responsabilidade única. Commit esperado:
+`[Refact] Extrair Classe, <nome da classe criada>`.
+
+**Pessoa 4 - Testes, Integração e Revisão geral**
+
+Garantir que todos os testes continuam passando após cada refatoração, verificar se as mensagens
+de commit seguem o formato `[Refact] <operação>, <Classe / Método alvo>` e atualizar o README
+quando necessário. Também atua como revisora dos PRs das outras pessoas antes do merge.
+
+A ordem natural de execução das refatorações é Pessoa 1, Pessoa 3 e Pessoa 2. Como as mudanças
+ocorrem em classes diferentes, elas podem avançar em paralelo desde que a Pessoa 4 rode os testes
+completos ao final.
 
 ## Fluxo TDD
 
@@ -116,7 +153,7 @@ as tabelas de antes/depois apresentadas no enunciado para cada caso. Use
 4. Rodar `pytest`.
 5. Abrir Pull Request para revisão.
 
-## Registro- Testes, Integração e Revisão
+## Registro da Pessoa 4 - Testes, Integração e Revisão
 
 Eu Esther Sena atuei como responsável por validar a integração do projeto depois das refatorações,
 garantindo que a suíte completa continue passando antes do merge.

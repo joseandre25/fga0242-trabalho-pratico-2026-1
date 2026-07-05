@@ -126,3 +126,7 @@ garantindo que a suíte completa continue passando antes do merge.
 - Escopo revisado: testes de unidade dos casos 1 a 5 e testes de integração do pipeline completo
 - Convenção de commits verificada para refatorações: `[Refact] <operação>, <Classe / Método alvo>`
 - Itens de revisão: funcionamento da integração, README e mensagens de commit relacionadas às refatorações
+
+Evidência da execução da suíte completa:
+
+![Resultado dos testes](imagens/ImagemDosTestes.png)

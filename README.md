@@ -115,3 +115,14 @@ as tabelas de antes/depois apresentadas no enunciado para cada caso. Use
 3. Implementar a menor solução possível no arquivo correspondente em `src/`.
 4. Rodar `pytest`.
 5. Abrir Pull Request para revisão.
+
+## Registro da Pessoa 4 - Testes, Integração e Revisão
+
+A Pessoa 4 atua como responsável por validar a integração do projeto depois das refatorações,
+garantindo que a suíte completa continue passando antes do merge.
+
+- Testes executados: `pytest`
+- Resultado da validação: 53 testes passando
+- Escopo revisado: testes de unidade dos casos 1 a 5 e testes de integração do pipeline completo
+- Convenção de commits verificada para refatorações: `[Refact] <operação>, <Classe / Método alvo>`
+- Itens de revisão: funcionamento da integração, README e mensagens de commit relacionadas às refatorações
